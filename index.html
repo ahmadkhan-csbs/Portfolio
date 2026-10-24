@@ -276,20 +276,17 @@
         </button>
     </div>
 
-    <!-- Top Navigation Header -->
+    <!-- Top Navigation Header with Responsive Flex Wrap Fix -->
     <header class="fixed top-0 left-0 right-0 z-40 glass-panel border-b border-white/10 no-print">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <a href="#" onclick="playSound('click')" class="text-lg sm:text-xl font-extrabold tracking-wider text-gradient-custom flex items-center space-x-2 font-mono">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-2 shrink-0">
+                <a href="#" onclick="playSound('click')" class="text-base sm:text-lg font-extrabold tracking-wider text-gradient-custom flex items-center space-x-1.5 font-mono">
                     <span class="accent-text">&gt;</span> <span>AHMAD.KHAN</span><span class="animate-blink text-purple-400">_</span>
                 </a>
-                <div class="hidden 2xl:flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-[11px] font-mono text-slate-400">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span id="header-ist-clock">KOLKATA • IST</span>
-                </div>
             </div>
             
-            <nav class="hidden xl:flex items-center space-x-4 font-medium text-xs text-slate-300">
+            <!-- Optimized Desktop Nav Links -->
+            <nav class="hidden 2xl:flex items-center space-x-3 font-medium text-[11px] text-slate-300">
                 <a href="#about" onmouseenter="playSound('hover')" onclick="playSound('click')" class="hover:text-[var(--accent-color)] transition font-mono">[01].ABOUT</a>
                 <a href="#skills" onmouseenter="playSound('hover')" onclick="playSound('click')" class="hover:text-[var(--accent-color)] transition font-mono">[02].SKILLS</a>
                 <a href="#github-stats" onmouseenter="playSound('hover')" onclick="playSound('click')" class="hover:text-[var(--accent-color)] transition font-mono">[03].GITHUB</a>
@@ -299,34 +296,35 @@
                 <a href="#timeline" onmouseenter="playSound('hover')" onclick="playSound('click')" class="hover:text-[var(--accent-color)] transition font-mono">[07].MILESTONES</a>
             </nav>
 
-            <div class="hidden md:flex items-center space-x-2.5">
-                <button onclick="toggleCommandPalette(); playSound('click')" class="px-3 py-2 rounded-xl glass-panel text-xs font-mono text-slate-300 border border-slate-700 hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] transition flex items-center space-x-1.5" title="Spotlight Search (Ctrl + K)">
-                    <i class="fa-solid fa-command text-[11px] accent-text"></i>
+            <div class="hidden xl:flex items-center space-x-2 shrink-0">
+                <button onclick="toggleCommandPalette(); playSound('click')" class="px-2.5 py-1.5 rounded-xl glass-panel text-[11px] font-mono text-slate-300 border border-slate-700 hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] transition flex items-center space-x-1" title="Spotlight Search (Ctrl + K)">
+                    <i class="fa-solid fa-command text-[10px] accent-text"></i>
                     <span>Ctrl+K</span>
                 </button>
-                <button onclick="openResumeModal(); playSound('click')" class="px-3.5 py-2 rounded-xl glass-panel text-xs font-mono text-emerald-400 border border-emerald-500/50 hover:bg-emerald-500/10 transition flex items-center space-x-1.5">
+                <button onclick="openResumeModal(); playSound('click')" class="px-3 py-1.5 rounded-xl glass-panel text-[11px] font-mono text-emerald-400 border border-emerald-500/50 hover:bg-emerald-500/10 transition flex items-center space-x-1">
                     <i class="fa-solid fa-file-pdf"></i>
-                    <span>VIEW_CV</span>
+                    <span>CV</span>
                 </button>
-                <button onclick="toggleTerminal(); playSound('click')" class="px-3 py-2 rounded-xl glass-panel text-xs font-mono accent-text border accent-border hover:bg-[var(--accent-color)]/10 transition">
+                <button onclick="toggleTerminal(); playSound('click')" class="px-2.5 py-1.5 rounded-xl glass-panel text-[11px] font-mono accent-text border accent-border hover:bg-[var(--accent-color)]/10 transition">
                     <i class="fa-solid fa-terminal mr-1"></i> CLI
                 </button>
-                <button onclick="toggleDroneGame(); playSound('click')" class="px-3 py-2 rounded-xl glass-panel text-xs font-mono text-purple-400 border border-purple-500/50 hover:bg-purple-500/10 transition">
+                <button onclick="toggleDroneGame(); playSound('click')" class="px-2.5 py-1.5 rounded-xl glass-panel text-[11px] font-mono text-purple-400 border border-purple-500/50 hover:bg-purple-500/10 transition">
                     <i class="fa-solid fa-gamepad mr-1"></i> DRONE
                 </button>
-                <a href="#contact" onclick="playSound('click')" class="px-4 py-2 rounded-xl accent-bg text-black font-bold text-xs hover:opacity-90 transition accent-glow font-mono">
+                <a href="#contact" onclick="playSound('click')" class="px-3.5 py-1.5 rounded-xl accent-bg text-black font-bold text-[11px] hover:opacity-90 transition accent-glow font-mono">
                     HIRE_ME
                 </a>
             </div>
 
+            <!-- Mobile & Tablet Hamburger Toggle -->
             <div class="flex xl:hidden items-center space-x-2">
-                <button onclick="toggleAudio()" id="mobile-audio-btn" class="w-9 h-9 rounded-xl glass-panel accent-text flex items-center justify-center text-sm">
+                <button onclick="toggleAudio()" id="mobile-audio-btn" class="w-8 h-8 rounded-xl glass-panel accent-text flex items-center justify-center text-xs">
                     <i class="fa-solid fa-volume-high"></i>
                 </button>
-                <button onclick="openResumeModal(); playSound('click')" class="px-3 py-2 rounded-xl glass-panel text-emerald-400 border border-emerald-500/40 font-mono text-xs font-bold">
+                <button onclick="openResumeModal(); playSound('click')" class="px-2.5 py-1.5 rounded-xl glass-panel text-emerald-400 border border-emerald-500/40 font-mono text-xs font-bold">
                     CV
                 </button>
-                <button id="menu-btn" class="accent-text focus:outline-none text-2xl p-1">
+                <button id="menu-btn" class="accent-text focus:outline-none text-xl p-1">
                     <i class="fa-solid fa-bars-staggered"></i>
                 </button>
             </div>
@@ -908,7 +906,6 @@
                     <p class="text-slate-400 text-sm mt-2">Available for internships, hackathons, freelance AI/Full-Stack builds, and open-source collaborations.</p>
                 </div>
 
-                <!-- Formspree Real Email Submission & WhatsApp Direct Integration -->
                 <form id="real-contact-form" onsubmit="handleRealContactSubmit(event)" class="space-y-4">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <input id="contact-name" type="text" name="name" required placeholder="Your Name" class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white font-mono focus:outline-none focus:border-[var(--accent-color)]">
